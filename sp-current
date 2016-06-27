@@ -1,3 +1,7 @@
 #!/bin/bash
 
-sp current | grep -E "^Artist|^Title" | colrm 1 13 | tr '\n' ' '
+CURRENT=$(sp current)
+ARTIST=$(echo "$CURRENT" | grep -E '^Artist' | colrm 1 13)
+TITLE=$(echo "$CURRENT" | grep -E '^Title' | colrm 1 13)
+
+echo "$ARTIST - $TITLE"
