@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sp current | grep -E "^Artist|^Title" | colrm 1 13 | tr '\n' ' '
